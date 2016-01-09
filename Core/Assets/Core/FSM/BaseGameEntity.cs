@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FuckGame.FSM
+namespace GameCore.FSM
 {
     public abstract class BaseGameEntity
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace FuckGame.FSM
+namespace GameCore.FSM
 {
     public class MessageDispatcher<TEntity> where TEntity : BaseGameEntity
     {
@@ -74,7 +74,7 @@ namespace FuckGame.FSM
 				"Delayed telegram from ",
 				sender,
 				" recorded at time ",
-				Time.get_realtimeSinceStartup(),
+				Time.realtimeSinceStartup,
 				" for ",
 				receiver,
 				". Msg is ",

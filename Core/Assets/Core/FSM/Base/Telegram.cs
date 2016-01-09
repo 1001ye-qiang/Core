@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FuckGame.FSM
+namespace GameCore.FSM
 {
     public class Telegram : IComparable
     {

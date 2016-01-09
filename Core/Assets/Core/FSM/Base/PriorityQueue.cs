@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FuckGame.FSM
+namespace GameCore.FSM
 {
     public class PriorityQueue<T> where T : IComparable
     {
