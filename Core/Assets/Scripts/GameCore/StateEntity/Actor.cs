@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using GameCore.FSM;
+using FuckGame.View;
 
 public class Actor : GameEntity<ActorInfo, ActorConfig, Director>
 {
@@ -19,6 +20,20 @@ public class Actor : GameEntity<ActorInfo, ActorConfig, Director>
     {
 
     }
+
+
+    public AnimatorControl ani;
+    public ViewMonitor vm;
+
+
+    
+}
+
+public class AnimatorControl
+{
+}
+public class ColliderControl
+{
 }
 
 public class ActorInfo
