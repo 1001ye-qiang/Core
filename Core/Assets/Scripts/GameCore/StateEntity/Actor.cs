@@ -5,6 +5,7 @@ using FuckGame.View;
 
 public class Actor : GameEntity<ActorInfo, ActorConfig, Director>
 {
+    #region base
     public StateMachine<Actor> stateMachine
     {
         get
@@ -14,6 +15,12 @@ public class Actor : GameEntity<ActorInfo, ActorConfig, Director>
         }
     }
     private StateMachine<Actor> mStateMachine;
+    #endregion // base
+
+    #region public editor member
+    public AnimatorControl ani;
+    public ViewMonitor vm;
+    #endregion // public editor member
 
     public Actor(ActorInfo actorInfo, ActorConfig actorConfig, int actId, Director competitionDirector)
         : base(actorInfo, actorConfig, competitionDirector, actId)
@@ -22,8 +29,6 @@ public class Actor : GameEntity<ActorInfo, ActorConfig, Director>
     }
 
 
-    public AnimatorControl ani;
-    public ViewMonitor vm;
 
 
     

@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using GameCore.FSM;
+using System.Collections.Generic;
 
-public class Director {
-
+public class Director
+{
+    #region base
+    // state machine
     public StateMachine<Director> stateMachine
     {
         get
@@ -14,7 +17,7 @@ public class Director {
     }
     private StateMachine<Director> mStateMachine;
 
-    //管理比赛角色
+    // entity manager
     public EntityManager<Actor> entityManager
     {
         get
@@ -25,6 +28,7 @@ public class Director {
     }
     private EntityManager<Actor> mEntityManager;
 
+    // role communication
     public MessageDispatcher<Actor> entityDispatcher
     {
         get
@@ -33,9 +37,31 @@ public class Director {
             return mEntityMessageDispatcher;
         }
     }
-    //角色之间的通信
     private MessageDispatcher<Actor> mEntityMessageDispatcher;
+    #endregion // base
 
+    #region Config
+    List<RoleData> lstRD;
+    StageConfig stageConfig;
+    #endregion // config
+
+
+    public void InitDirector(List<RoleData> lstRd, StageConfig sc)
+    {
+        lstRD = lstRd;
+        stageConfig = sc;
+
+
+    }
+    
+
+    // config machine
+    // info machine
+    // script
+    public void OnAction()
+    {
+
+    }
 }
 //导演响应的消息
 public enum DirectorMsgType

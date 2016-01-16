@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Action : MonoBehaviour {
+public class RoleNotify : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,11 +12,4 @@ public class Action : MonoBehaviour {
 	void Update () {
 	
 	}
-
-    // config machine
-    // info machine
-    // script
-    public void OnAction()
-    {
-    }
 }
