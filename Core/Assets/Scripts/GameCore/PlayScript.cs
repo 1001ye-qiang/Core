@@ -21,14 +21,15 @@ public class PlayScript : SingleBase<PlayScript> {
     {
         this.lstRD = lstRd;
         this.stageRes = si;
-        if (director == null)
-            director = new Director();
 
         GameObject stage = LoadPrefab.LoadResource(si.path); 
         StageConfig sc = stage.GetComponent<StageConfig>();
 
 
+        if (director == null)
+            director = new Director();
         director.InitDirector(lstRd, sc);
+        director.stateMachine.SetCurrentState(PrepareState.Instance);
     }
 
     public void CloseScript()

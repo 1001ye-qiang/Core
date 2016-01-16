@@ -50,8 +50,6 @@ public class Director
     {
         lstRD = lstRd;
         stageConfig = sc;
-
-
     }
     
 
