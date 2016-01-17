@@ -2,17 +2,11 @@
 using System.Collections;
 using GameCore.FSM;
 
-public class PrepareState : BaseState<PrepareState, Director>
+public class CloseState: BaseState<CloseState, Director>
 {
     //进入状态时调用的方法//
     override public void Enter(Director entity)
     {
-        // how to instantiation actor and stage?
-        for (int i = 0; i < entity.lstRD.Count; ++i)
-        {
-            
-        }
-
     }
 
     //在当前状态的更新方法中一直调用//

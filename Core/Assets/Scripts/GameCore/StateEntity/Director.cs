@@ -41,8 +41,8 @@ public class Director
     #endregion // base
 
     #region Config
-    List<RoleData> lstRD;
-    StageConfig stageConfig;
+    public List<RoleData> lstRD;
+    public StageConfig stageConfig;
     #endregion // config
 
 
