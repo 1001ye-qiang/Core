@@ -7,7 +7,7 @@ public class PlayScript : SingleBase<PlayScript> {
     private Director director;
     public Director Director
     {
-        get { return director; }
+        get{ if (director == null)   director = new Director();  return director; }
     }
 
     public List<RoleData> lstRD;
@@ -25,11 +25,9 @@ public class PlayScript : SingleBase<PlayScript> {
         GameObject stage = LoadPrefab.LoadResource(si.path); 
         StageConfig sc = stage.GetComponent<StageConfig>();
 
-
-        if (director == null)
-            director = new Director();
-        director.InitDirector(lstRd, sc);
-        director.stateMachine.SetCurrentState(PrepareState.Instance);
+        Director.lstRD = lstRd;
+        Director.stageConfig = sc;
+        Director.stateMachine.SetCurrentState(PrepareState.Instance);
     }
 
     public void CloseScript()

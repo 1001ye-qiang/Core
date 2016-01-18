@@ -45,14 +45,7 @@ public class Director
     public StageConfig stageConfig;
     #endregion // config
 
-
-    public void InitDirector(List<RoleData> lstRd, StageConfig sc)
-    {
-        lstRD = lstRd;
-        stageConfig = sc;
-    }
     
-
     // config machine
     // info machine
     // script
@@ -60,12 +53,23 @@ public class Director
     {
 
     }
+
+    public void Tick(float deltaTime)
+    {
+        stateMachine.Tick(deltaTime);
+        //entityDispatcher.Tick(deltaTime);
+    }
+
 }
 //导演响应的消息
 public enum DirectorMsgType
 {
-    Run = 0,
-    Pause = 1,
+    Prepare = 0,
+    Run,
+    Pause,
+    Restart,
+    Close,
+    SaveProcess,
 }
 
 

@@ -12,6 +12,10 @@ public class PauseState : BaseState<PauseState, Director>
     //在当前状态的更新方法中一直调用//
     override public void Execute(Director entity, float deltaTime)
     {
+        foreach (Actor actor in entity.entityManager)
+        {
+            actor.stateMachine.Tick(deltaTime);
+        }
     }
 
     //退出状态时调用的方法//
@@ -24,8 +28,23 @@ public class PauseState : BaseState<PauseState, Director>
     {
         switch ((DirectorMsgType)msg.mMsg)
         {
+            case DirectorMsgType.Prepare:
+                entity.stateMachine.ChangeState(PrepareState.Instance);
+                return true;
+            case DirectorMsgType.Run:
+                entity.stateMachine.ChangeState(RunState.Instance);
+                return true;
             case DirectorMsgType.Pause:
                 entity.stateMachine.ChangeState(PauseState.Instance);
+                return true;
+            case DirectorMsgType.Restart:
+                entity.stateMachine.ChangeState(RestartState.Instance);
+                return true;
+            case DirectorMsgType.Close:
+                entity.stateMachine.ChangeState(CloseState.Instance);
+                return true;
+            case DirectorMsgType.SaveProcess:
+                entity.stateMachine.ChangeState(SaveProcessState.Instance);
                 return true;
         }
         return false;

@@ -2,7 +2,7 @@
 using System.Collections;
 using GameCore.FSM;
 
-public class PrepareState : BaseState<PrepareState, Director>
+public class SaveProcessState : BaseState<SaveProcessState, Director>
 {
     //进入状态时调用的方法//
     override public void Enter(Director entity)
