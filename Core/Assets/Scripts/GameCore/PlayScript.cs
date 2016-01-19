@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class PlayScript : SingleBase<PlayScript> {
 
-    private Director director;
-    public Director Director
+    private Director _director;
+    public Director director
     {
-        get{ if (director == null)   director = new Director();  return director; }
+        get { if (_director == null)   _director = new Director(); return _director; }
     }
 
     public List<RoleData> lstRD;
@@ -25,9 +25,9 @@ public class PlayScript : SingleBase<PlayScript> {
         GameObject stage = LoadPrefab.LoadResource(si.path); 
         StageConfig sc = stage.GetComponent<StageConfig>();
 
-        Director.lstRD = lstRd;
-        Director.stageConfig = sc;
-        Director.stateMachine.SetCurrentState(PrepareState.Instance);
+        director.lstRD = lstRd;
+        director.stageConfig = sc;
+        director.stateMachine.SetCurrentState(PrepareState.Instance);
     }
 
     public void CloseScript()

@@ -43,6 +43,9 @@ public class Director
     #region Config
     public List<RoleData> lstRD;
     public StageConfig stageConfig;
+
+    public DirectorHelper helper { get { if (mHelper == null) mHelper = new DirectorHelper(this); return mHelper; } }
+    DirectorHelper mHelper = null;
     #endregion // config
 
     

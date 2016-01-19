@@ -4,15 +4,55 @@ using System.Collections.Generic;
 
 public class DirectorHelper
 {
-    public static int CreateActor(RoleData rd, OnFinish finish)
+    Director director;
+    public DirectorHelper(Director director)
     {
-        int id = PlayScript.Instance.Director.entityManager.CreateID();
+        this.director = director;
+    }
+
+    public void DirectorPrepare()
+    {
+        for (int i = 0; i < director.lstRD.Count; ++i)
+        {
+            RoleData rd = director.lstRD[i];
+            director.helper.CreateActor(rd, delegate(bool finish)
+            {
+
+            });
+        }
+        director.helper.CreateCamera();
+    }
+
+    public void DirectorRun()
+    {
+    }
+    public void DirectorPause()
+    {
+    }
+    public void DirectorRestart()
+    {
+    }
+    public void DirectorClose()
+    {
+    }
+    public void DirectorSaveProcess()
+    {
+    }
+
+
+
+
+
+
+    public int CreateActor(RoleData rd, OnFinish finish)
+    {
+        int id = PlayScript.Instance.director.entityManager.CreateID();
         //Actor actor = new Actor()
 
         return id;
     }
 
-    public static int[] LoadActors(List<RoleData> rds, OnFinish finish)
+    private int[] LoadActors(List<RoleData> rds, OnFinish finish)
     {
         List<int> roleIds = new List<int>();
         for (int i = 0; i < rds.Count; ++i)
@@ -54,5 +94,9 @@ public class DirectorHelper
             */
         }
         return roleIds.ToArray();
+    }
+
+    private void CreateCamera()
+    {
     }
 }

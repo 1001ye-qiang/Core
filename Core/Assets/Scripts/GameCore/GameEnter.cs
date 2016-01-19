@@ -10,6 +10,6 @@ public class GameEnter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        PlayScript.Instance.Director.Tick(Time.deltaTime);
+        PlayScript.Instance.director.Tick(Time.deltaTime);
 	}
 }
