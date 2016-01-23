@@ -9,8 +9,9 @@ public class DirectorHelper
     {
         this.director = director;
     }
-
-    public void DirectorPrepare()
+    
+    // Prepare sth.
+    public void DirectorPrepare(OnFinish onfinish)
     {
         for (int i = 0; i < director.lstRD.Count; ++i)
         {
@@ -20,6 +21,7 @@ public class DirectorHelper
 
             });
         }
+
         director.helper.CreateCamera();
     }
 

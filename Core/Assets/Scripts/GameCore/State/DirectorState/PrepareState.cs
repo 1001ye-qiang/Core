@@ -7,7 +7,9 @@ public class PrepareState : BaseState<PrepareState, Director>
     //进入状态时调用的方法//
     override public void Enter(Director entity)
     {
-        entity.helper.DirectorPrepare();
+        entity.helper.DirectorPrepare(delegate(bool finish) {
+            entity.stateMachine.ChangeState(RunState.Instance);
+        });
     }
 
     //在当前状态的更新方法中一直调用//
