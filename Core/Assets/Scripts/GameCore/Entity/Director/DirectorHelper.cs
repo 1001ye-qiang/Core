@@ -16,7 +16,12 @@ public class DirectorHelper
         for (int i = 0; i < director.lstRD.Count; ++i)
         {
             RoleData rd = director.lstRD[i];
-            director.helper.CreateActor(rd, delegate(bool finish)
+
+
+
+            ActorConfig config = new ActorConfig();
+            ActorInfo info = new ActorInfo();
+            director.helper.CreateActor(info, config, delegate(bool finish)
             {
 
             });
@@ -46,10 +51,12 @@ public class DirectorHelper
 
 
 
-    public int CreateActor(RoleData rd, OnFinish finish)
+    public int CreateActor(ActorInfo info, ActorConfig config, OnFinish finish)
     {
-        int id = PlayScript.Instance.director.entityManager.CreateID();
-        //Actor actor = new Actor()
+        //int id = PlayScript.Instance.director.entityManager.CreateID();
+        int id = director.entityManager.CreateID();
+        Actor actor = new Actor(info, config, id, director);
+
 
         return id;
     }
