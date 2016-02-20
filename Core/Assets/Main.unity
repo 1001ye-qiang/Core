@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 635125259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.003125, y: 0.003125, z: 0.003125}
+  m_LocalScale: {x: 0.0017905103, y: 0.0017905103, z: 0.0017905103}
   m_Children:
   - {fileID: 1326303944}
   - {fileID: 1521537603}
@@ -560,7 +560,7 @@ GameObject:
   - 4: {fileID: 911069859}
   - 114: {fileID: 911069858}
   m_Layer: 0
-  m_Name: GameEnter
+  m_Name: GameMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 911069857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192de3b367e359243a3ddd70f8221273, type: 3}
+  m_Script: {fileID: 11500000, guid: eb1b061e1408697458fd0aa6a337d6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &911069859
